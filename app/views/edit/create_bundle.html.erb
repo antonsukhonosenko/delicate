@@ -1,0 +1,41 @@
+<script>
+    $('div#h4 a').hover(function (event) {
+        $(event.target).parent().children('.bundle_delete').show();
+    },
+                       function (event) {
+                           $('.bundle_delete').hide();
+                       });
+
+    $('div#h4 .bundle_delete').hover(function (event) {
+        $(event.target).parent().children('.bundle_delete').show();
+    },
+                                    function (event) {
+                                        $('.bundle_delete').hide();
+                                    });
+
+
+    $('.bundle_delete').click(function (event) {
+        if(confirm("Do you want to delete this bundle?"))
+        {
+            // alert($(event.target).parent().children('a').html());
+
+            $.ajax({
+                url: '/delete_bundle?',
+                data: 'bundle='+$(event.target).parent().children('a').html(),
+                success: function(data){
+                    $("#bundles_container").html(data);
+                },
+
+                error: function(xhr, ajaxOptions, thrownError) {
+                    alert("Cannot delete this bundle");
+                }
+            });
+        }
+    });
+</script>
+
+<div id="h4_all"><span class="bundle_delete">x</span><a href="bundles">All</a></div>
+
+<% @bundles.each do |b| %>
+    <div id="h4"><span class="bundle_delete">x</span><a href="bundles?bundle=<%= b.name %>"><%= b.name %></a></div>
+<% end %>

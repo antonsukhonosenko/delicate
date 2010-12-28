@@ -1,0 +1,76 @@
+--- !ruby/object:OAuth::Yahoo::RequestToken 
+request_token: !ruby/object:OAuth::RequestToken 
+  consumer: !ruby/object:OAuth::Consumer 
+    http: !ruby/object:Net::HTTP 
+      address: api.login.yahoo.com
+      ca_file: 
+      ca_path: 
+      cert: 
+      cert_store: 
+      ciphers: 
+      close_on_empty_response: false
+      compression: 
+      curr_http_version: "1.1"
+      debug_output: 
+      enable_post_connection_check: true
+      key: 
+      newimpl: true
+      no_keepalive_server: false
+      open_timeout: 
+      port: 443
+      read_timeout: 60
+      socket: 
+      ssl_context: !ruby/object:OpenSSL::SSL::SSLContext 
+        ca_file: 
+        ca_path: 
+        cert: 
+        cert_store: 
+        client_ca: 
+        client_cert_cb: 
+        extra_chain_cert: 
+        key: 
+        options: 4095
+        servername_cb: 
+        session_get_cb: 
+        session_id_context: 
+        session_new_cb: 
+        session_remove_cb: 
+        timeout: 
+        tmp_dh_callback: 
+        verify_callback: 
+        verify_depth: 
+        verify_mode: 0
+      ssl_timeout: 
+      ssl_version: 
+      sspi_enabled: false
+      started: false
+      use_ssl: true
+      verify_callback: 
+      verify_depth: 
+      verify_mode: 0
+    http_method: :get
+    key: dj0yJmk9dzZEOU05Nlk0NmFLJmQ9WVdrOWR6VmFNR28zTXpZbWNHbzlNQS0tJnM9Y29uc3VtZXJzZWNyZXQmeD1lNw--
+    options: 
+      :signature_method: HMAC-SHA1
+      :request_token_path: /oauth/v2/get_request_token
+      :authorize_path: /oauth/v2/request_auth
+      :access_token_path: /oauth/v2/get_token
+      :proxy: 
+      :scheme: :query_string
+      :http_method: :get
+      :oauth_version: "1.0"
+      :site: https://api.login.yahoo.com
+    secret: 011f620d7decf58113e2d4e69a9ea1fb5b3b7eb7
+  params: 
+    :oauth_token: hbgwxy2
+    oauth_token: hbgwxy2
+    :oauth_token_secret: 228ad71714aa61299475c95f8adb914d1e84cd62
+    oauth_token_secret: 228ad71714aa61299475c95f8adb914d1e84cd62
+    :oauth_expires_in: "3600"
+    oauth_expires_in: "3600"
+    :xoauth_request_auth_url: https://api.login.yahoo.com/oauth/v2/request_auth?oauth_token=hbgwxy2
+    xoauth_request_auth_url: https://api.login.yahoo.com/oauth/v2/request_auth?oauth_token=hbgwxy2
+    :oauth_callback_confirmed: "true"
+    oauth_callback_confirmed: "true"
+  secret: 228ad71714aa61299475c95f8adb914d1e84cd62
+  token: hbgwxy2

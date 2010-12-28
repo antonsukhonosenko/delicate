@@ -1,0 +1,530 @@
+<script>
+
+    var selected_element = null;
+    var element_being_changed = null;
+    var selected_value = '';
+
+    function getURLParameter(name) {
+        return unescape((RegExp(name + '=' + '(.+?)(&|$)').exec(location.search)||[,null])[1]
+                );
+    }
+
+    function doubleclick(event) {
+
+        var et = $(event.target);
+
+        if(et[0].tagName == "SPAN")
+        {
+            selected_element = et;
+            selected_value = et.html();
+
+            $(event.target).html("<input onkeypress ='save(event)' class='tag_edit_input' type='text' value='"+selected_value+"' />");
+
+
+            var data = <%= @autocomplete %>;
+
+            $(".tag_edit_input").autocomplete(data, {multiple: true, multipleSeparator: " ", selectFirst: false});
+
+        }
+    }
+
+    function create_bundle() {
+
+        var tag_params = '&tags=';
+
+        $('.tag_drop_area .hover .tag').each(function(index) {
+            tag_params += ($(this).html()+"+");
+        });
+
+        if($('input#bundle').val()!="") {
+
+            $.ajax({
+                url: '/create_bundle?',
+                data: 'bundle='+$('input#bundle').val()+tag_params,
+                success: function(data){
+                    // alert(data);  // replace bundles list with recieved html data
+                    $("#bundles_container").html(data);
+                    $(".tag_drop_area").html("Drop tags here to create bundle:<br/><br/>");
+
+                    $('#bundles #h4').droppable({
+                        drop: function(event, ui) {
+
+                            $(event.target).children('a').css('background-color', 'yellow');
+                            $(ui.draggable).children('.tag').css('background-color', 'yellow');
+
+                            $.ajax({
+                                url: '/tag_to_bundle?',
+                                data: 'bundle='+$(event.target).children('a').html()+'&tag='+$(ui.draggable).children('.tag').html(),
+                                success: function(data){
+                                    $("#bundles_container").html(data);
+                                    $(".tag_drop_area").html("Drop tags here to create bundle:<br/><br/>");
+
+                                    $(event.target).children('a').css('background-color', 'transparent');
+                                    $(ui.draggable).children('.tag').css('background-color', 'transparent');
+                                },
+                                error: function(xhr, ajaxOptions, thrownError) {
+                                    $(event.target).children('a').css('background-color', 'transparent');
+                                    $(ui.draggable).children('.tag').css('background-color', 'transparent');
+                                    alert("Cannot add tag to bundle");
+                                }
+                            });
+
+                        },
+                        accept: '.hover',
+                        hoverClass: 'drop_bundle',
+                        greedy: true
+                    });
+
+
+                },
+                error: function(xhr, ajaxOptions, thrownError) {
+                    alert("Cannot create bundle");
+                }
+            });
+
+        } else {
+            $('input#bundle').css('background-color', 'yellow');
+        }
+    };
+
+    function tag_search(event) {
+
+        tags = $('.tag_letter .hover .tag');
+        var number_of_tags = 0;
+
+        tags.each(function (index) {
+            var tag_found = $(this).parent();
+
+            if ($(tags[index]).html().indexOf($(event.target).val()) >= 0) {
+
+                // SHOW
+
+                tag_found.removeClass('hiddentag').addClass('showntag');
+                tag_found.children('a').css('color', '#ca7733');
+
+                number_of_tags++;
+
+                if(tag_found.parent().children('.showntag').length != 0) {
+                    $(tags[index]).parent().parent().show();
+                }
+            }
+            else {
+
+                // HIDE
+
+                tag_found.removeClass('showntag').addClass('hiddentag');
+                tag_found.children('a').css('color', 'lightgray');
+
+                // $('#bundle_tags_num').html(parseInt($('#bundle_tags_num').html())-1);
+
+                if(tag_found.parent().children('.showntag').length == 0) {
+                    $(tags[index]).parent().parent().hide();
+                }
+            };
+        });
+
+        $('#bundle_tags_num').html(number_of_tags);
+    }
+
+    function delete_tag(se, sv) {
+
+        se.html(selected_value);
+        sep = se.parent();
+
+        sep.css('color', 'lightgray');
+        sep.css('text-decoration', 'line-through');
+
+        element_being_changed = se;
+
+        $.ajax({
+            url: '/delete_tag?',
+            data: 'tag='+sv+'&<%= @bundle_param %>',
+            success: function(data){
+                $(element_being_changed.parent()).fadeOut();
+                $('#tags_num').html($('#tags_num').html()-1);
+                $('#bundle_tags_num').html($('#bundle_tags_num').html()-1);
+
+            },
+            error: function(xhr, ajaxOptions, thrownError) {
+                alert("Cannot delete tag "+ thrownError);
+                element_being_changed.css('color', 'black');
+            }
+        });
+
+        return false;
+    }
+
+    function rename_tag(se, sv, et_val) {
+
+        selected_element.html(et_val);
+        selected_element.css('background-color', 'yellow');
+
+        element_being_changed = se;
+
+        var number_of_tags = 0;
+
+        $.ajax({
+            url: '/rename_tag?',
+            data: 'old='+sv+'&new='+et_val+'&<%= @bundle_param %>',  // cannot send for:someone
+            success: function(data){
+                $("#tag_container").html(data); // FIXME: second tag temporary renaming to old value when first tag rename succeeds
+
+                $(".tag").dblclick(doubleclick);
+                $("#tag").keyup(tag_search);
+
+                // hide unmatched
+
+                $('.tag_letter .hover .tag').each(function (index) {
+                    if($(this).html().indexOf($("#tag").val()) < 0) {
+                        $(this).parent().removeClass('showntag').addClass('hiddentag');
+                        $(this).parent().children('a').css('color', 'lightgray');
+                    }
+                    else {
+                        number_of_tags++;
+                    }
+                });
+
+                $('.tag_letter').each(function (index) {
+                    if($(this).children('.showntag').length == 0) {
+                        $(this).hide();
+                    }
+                });
+
+                $('.hover').hover(function (event) {
+                    $(event.target).parent().children('.tag_delete').show();
+                },
+                                 function (event) {
+                                     $('.tag_delete').hide();
+                                 });
+
+                $('.hover a').hover(function (event) {
+                    $(event.target).parent().children('.tag_delete').show();
+                },
+                                   function (event) {
+                                       $('.tag_delete').hide();
+                                   });
+
+
+                $('.tag_delete').click(function (event) {
+                    if(confirm("Do you want to delete this tag?"))
+                    {
+                        selected_element = $(event.target).parent().children('.tag');
+                        selected_value = selected_element.html();
+
+                        delete_tag(selected_element, selected_value);
+                    }
+                });
+
+                $('#bundle_tags_num').html(number_of_tags);
+
+                $(".hover").draggable({ revert: true, revertDuration: 100, opacity: 0.35, stack: ".hover" });
+
+                $('.hover').droppable({
+                    drop: function(event, ui) {
+                        var et = $(event.target).children('.tag');
+
+                        if(confirm("Do you want to merge "+$(ui.draggable).children('.tag').html()+" into "+$(event.target).children('.tag').html()+"?") && (et.html().indexOf("<") < 0))
+                        {
+                            $(ui.draggable).css('text-decoration', 'line-through');
+                            $(ui.draggable).css('color', 'lightgray');
+                            $(event.target).children('.tag').css('background-color', 'yellow');
+
+                            $.ajax({
+                                url: '/merge_tags?',
+                                data: 'old='+$(ui.draggable).children('.tag').html()+'&new='+$(event.target).children('.tag').html()+'&<%= @bundle_param %>',  // cannot send for:someone
+                                success: function(data){
+                                    $(ui.draggable).hide();
+                                    $(event.target).children('a').html(data);
+                                    $(event.target).children('.tag').css('background-color', 'transparent');
+                                },
+                                error: function(xhr, ajaxOptions, thrownError) {
+                                    alert("Cannot merge tags"+ xhr.result);
+                                }
+                            });
+                        }
+                    },
+                    accept: '.hover',
+                    hoverClass: 'drop_hover',
+                });
+
+
+            },
+            error: function(xhr, ajaxOptions, thrownError) {
+                alert("Cannot rename tag"+ xhr.result);
+                element_being_changed.html(selected_value);
+                element_being_changed.css('background-color', 'red');
+            }
+        });
+    }
+
+    function save(event) {
+        if (event.keyCode == '13') {
+
+            $('.ac_results').hide();
+
+            var et = $(event.target);
+
+            if((et.val()=="") && (confirm("Do you want to delete this tag?")))
+            {
+                delete_tag(selected_element, selected_value);
+            }
+            else
+            {
+                // rename tag
+                rename_tag(selected_element, selected_value, et.val());
+            }
+
+            selected_value = ""
+        }
+    }
+
+    $(document).ready(function () {
+
+        $('.hover').hover(function (event) {
+            $(event.target).parent().children('.tag_delete').show();
+            // $(event.target).css('background-color', 'green');
+
+        },
+                         function (event) {
+                             $('.tag_delete').hide();
+                         });
+
+        $('.hover a').hover(function (event) {
+            $(event.target).parent().children('.tag_delete').show();
+        },
+                           function (event) {
+                               $('.tag_delete').hide();
+                           });
+
+
+        $('.tag_delete').click(function (event) {
+            if(confirm("Do you want to delete this tag?"))
+            {
+                selected_element = $(event.target).parent().children('.tag');
+                selected_value = selected_element.html();
+
+                delete_tag(selected_element, selected_value);
+            }
+        });
+
+        $(document).click(function (event) {
+            if($(event.target)[0].tagName != 'INPUT') {
+                $('.tag input').each(function () {
+                    value = $(this).val();
+                    $(this).parent().html(selected_value);
+                });
+            }
+        });
+
+        $("#tag").keyup(tag_search);
+        $(".tag").dblclick(doubleclick);
+        $("#wrapper").height($(document).height());
+
+
+        $(".hover").draggable({ revert: true, revertDuration: 100, opacity: 0.35, stack: ".hover" });
+
+        $('.hover').droppable({
+            drop: function(event, ui) {
+
+                // colorize it all
+
+                var et = $(event.target);
+                var etc = $(event.target).children('.tag');
+
+                var uid = $(ui.draggable);
+
+                if(confirm("Do you want to merge '"+uid.children('.tag').html()+"' into '"+etc.html()+"'?") && (etc.html().indexOf("<") < 0))
+                {
+
+                    uid.css('text-decoration', 'line-through');
+                    uid.css('background-color', 'lightgray');
+                    etc.css('background-color', 'yellow');
+
+                    $.ajax({
+                        url: '/merge_tags?',
+                        data: 'old='+uid.children('.tag').html()+'&new='+etc.html()+'&<%= @bundle_param %>',  // cannot send for:someone
+                        success: function(data){
+                            uid.hide();
+                            et.children('a').html(data);
+                            etc.css('background-color', 'transparent');
+                        },
+                        error: function(xhr, ajaxOptions, thrownError) {
+                            alert("Cannot merge tags"+ xhr.result);
+                        }
+                    });
+                }
+            },
+            accept: '.hover',
+            hoverClass: 'drop_hover',
+        });
+
+        $('.tag_drop_area').droppable({
+            drop: function(event, ui) {
+
+                $('.tag_drop_area .hover .tag').each(function() {
+
+                    if($(this).html()==$(ui.draggable).children('.tag').html()){
+                        $(this).parent().remove();
+                        return;
+                    };
+
+                });
+
+                $('.tag_drop_area').html($('.tag_drop_area').html()+'<div class="hover">'+$(ui.draggable).html()+'</div>');
+
+                $('.tag_drop_area .hover').hover(function (event) {
+                    $(event.target).parent().children('.tag_delete').show();
+                },
+                                                function (event) {
+                                                    $('.tag_delete').hide();
+                                                });
+
+                $('.tag_drop_area .hover .tag_delete').click(function (event) {
+                    if(confirm("Do you want to remove tag from bundle?"))
+                    {
+                        $(event.target).parent().remove();
+                    }
+                });
+
+            },
+            accept: '.hover',
+            hoverClass: 'drop_area',
+        });
+
+        $('#bundles #h4').droppable({
+            drop: function(event, ui) {
+
+                var uidc = $(ui.draggable).children('.tag');
+                var etc = $(event.target).children('a');
+
+                etc.css('background-color', 'yellow');
+                uidc.css('background-color', 'yellow');
+
+                $.ajax({
+                    url: '/tag_to_bundle?',
+                    data: 'bundle='+etc.html()+'&tag='+uidc.html(),
+                    success: function(data){
+                        $("#bundles_container").html(data);
+                        $(".tag_drop_area").html("Drop tags here to create bundle:<br/><br/>");
+
+                        etc.css('background-color', 'transparent');
+                        uidc.css('background-color', 'transparent');
+                    },
+                    error: function(xhr, ajaxOptions, thrownError) {
+                        etc.css('background-color', 'transparent');
+                        uidc.css('background-color', 'transparent');
+                        alert("Cannot add tag to bundle");
+                    }
+                });
+
+            },
+            accept: '.hover',
+            hoverClass: 'drop_bundle',
+            greedy: true
+        });
+
+        $('#add_bundle').click(create_bundle);
+
+        $('input#bundle').keydown(function (event) {
+            $(this).css('background-color', 'white');
+            if (event.keyCode == '13') {
+                create_bundle();
+            }
+        });
+
+        $("#bundles").height($("#tags").height());
+
+        // hide unmatched
+
+        $('.tag').each(function (index) {
+            if($(this).html().indexOf($("#tag").val()) < 0) {
+                parent = $(this).parent();
+                parent.removeClass('showntag').addClass('hiddentag');
+                parent.children('a').css('color', 'lightgray');
+            }
+        });
+
+        $('.tag_letter').each(function (index) {
+            if($(this).children('.showntag').length == 0) {
+                $(this).hide();
+            }
+        });
+
+        $('.bundle_delete').click(function (event) {
+            if(confirm("Do you want to delete this bundle?"))
+            {
+                // alert($(event.target).parent().children('a').html());
+
+                var bundle = $(event.target).parent().children('a').html();
+
+                $.ajax({
+                    url: '/delete_bundle?',
+                    data: 'bundle='+bundle,
+                    success: function(data){
+                        $("#bundles_container").html(data);
+
+                        if(bundle == getURLParameter("bundle")) {
+                            location.href = "/"
+                        }
+                    },
+                    error: function(xhr, ajaxOptions, thrownError) {
+                        alert("Cannot delete this bundle");
+                    }
+                });
+
+            }
+        });
+
+        $('div#h4 a').hover(function (event) {
+            $(event.target).parent().children('.bundle_delete').show();
+        },
+        function (event) {
+            $('.bundle_delete').hide();
+        });
+
+        $('div#h4 .bundle_delete').hover(function (event) {
+            $(event.target).parent().children('.bundle_delete').show();
+        },
+        function (event) {
+            $('.bundle_delete').hide();
+        });
+
+    });
+</script>
+
+<div id="wrapper">
+
+  <div id="bundles">
+
+    <div id="bundles_container">
+      <div id="h4_all"><span class="bundle_delete">x</span><a href="bundles">All</a></div>
+
+      <% @bundles.each do |b| %>
+          <div id="h4"><span class="bundle_delete">x</span><a href="bundles?bundle=<%= b.name %>"><%= b.name %></a></div>
+      <% end %>
+    </div>
+
+    <%= text_field_tag 'bundle' %><%= submit_tag 'Add', :id => 'add_bundle' %>
+    <div class="tag_drop_area">
+      Drop tags here to create bundle:<br/><br/>
+    </div>
+
+
+  </div>
+
+  <div id="tags">
+    <div style="margin: 20px 20px 0px -100px; float: right">
+      <a href="http://www.delicious.com/<%= session[:login] %>"><%= session[:login] %></a>&nbsp;
+      <a href='/logout'>Logout</a>
+    </div>
+
+    <div id="search_tag_div" >
+      <%= text_field_tag 'tag' %>
+    </div>
+
+    <div id="tag_container">
+      <%= render :partial => 'edit/tags' %>
+    </div>
+  </div>
+</div>
+<div id="footer"></div>

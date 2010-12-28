@@ -1,0 +1,22 @@
+<div id="numbers">
+  <span id="bundle_tags_num"><%= @tags.length %></span> of <span id="tags_num"><%= @tags_cache.length %></span> tags
+</div>
+
+<% blocks = 0 %>
+
+<div class="tag_letter">
+  <h3><%= @tags[0].name[0].chr.upcase %></h3>
+  <% @tags.each_with_index do |t, i| %>
+
+      <div class="hover showntag"><span class="tag_delete">x</span><div class="tag"><%= t.name %></div> <a href="http://delicious.com/<%=session[:login] +'/'+ t.name %>"><%= t.count %></a></div>
+      <% if @tags[i+1] && t.name[0].chr.downcase != @tags[i+1].name[0].chr.downcase %>
+          </div>
+          <% blocks +=1 %>
+          <% if blocks % 6 == 0 %>
+              <div class="divider"></div>
+          <% end %>
+          <div class="tag_letter">
+            <h3><%= @tags[i+1].name[0].chr.upcase %></h3>
+      <% end %>
+
+  <% end %>

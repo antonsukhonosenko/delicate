@@ -1,0 +1,283 @@
+/* html{ overflow-y : scroll; } */
+
+body {
+   font-family: Helvetica, Geneva, Arial, sans-serif;
+   font-size: small;
+   font-color: #000;
+   background-color: #fff;
+   margin:0px; padding: 0px;
+}
+
+#main_container{
+   margin:0px; padding: 0px; width:930px;
+   margin-left: auto; margin-right: auto;
+   min-height: 500px;
+}
+
+h1 {font-size: 22px; font-weight: normal; color: gray }
+
+
+a:link, a:active, a:visited {
+   color: #BF6C0B;
+}
+
+h1 a {font-size: 22px; font-weight: normal; color: #BF6C0B; }
+
+input {
+   margin-bottom: 5px;
+}
+p {
+   line-height: 150%;
+}
+div#container {
+   width: 760px;
+   margin: 0 auto;
+}
+div#header {
+   text-align: center;
+   padding-bottom: 15px;
+}
+div#content {
+   float: left;
+   width: 450px;
+   padding: 10px;
+}
+div#content h3 {
+   margin-top: 15px;
+}
+ul#books {
+   list-style-type: none;
+}
+ul#books li {
+   line-height: 140%;
+}
+div#sidebar {
+   width: 200px;
+   margin-left: 480px;
+}
+ul#subjects {
+   width: 700px;
+   text-align: center;
+   padding: 5px;
+   background-color: #ececec;
+   border: 1px solid #ccc;
+   margin-bottom: 20px;
+}
+ul#subjects li {
+   display: inline;
+   padding-left: 5px;
+}
+
+#user_status, #statusdiv form {display: inline}
+
+
+form div label { display: inline-block; width: 100px; vertical-align: top; }
+form div input[type="submit"] {
+	margin-left: 105px;
+	margin-top: 20px;
+	background-repeat: repeat-x;
+	border: 0px solid transparent;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	color: white;
+	font-size: 14px;
+}
+form div input, form div select, form div textarea {
+	margin-bottom: 20px;
+}
+
+form div input[type="text"], form div input[type="password"], textarea {
+	border: 1px solid lightgray;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+	padding: 3px;
+}
+
+form div select {
+	width: 100px;
+}
+
+.fieldWithErrors {display: inline-block; width: 100px; vertical-align: top}
+.fieldWithErrors label {display: inline-block; width: 100px; margin-left: 0px; vertical-align: top }
+.fieldWithErrors input {background-color: yellow; margin-bottom: 20px;}
+
+#resetpwd {margin-left: 125px;}
+
+table {margin-bottom: 40px; width: 100%}
+
+th {background-color: #fff; color: #222; padding-left: 10px; padding-right: 10px; border-bottom: 1px solid lightgray; text-align: left}
+td {padding: 5px 10px 5px 10px; margin: 0px}
+td.tdlink {background-color: #fff; width: 60px}
+.table_menu {font-size: 20px; margin-top: 5px}
+
+.notice { background-color: #B5FF3F; color: black; padding: 10px; margin-top: 10px; margin-bottom: 10px}
+.error { background-color: #FF8F8F; color: black; padding: 10px; margin-top: 10px; margin-bottom: 10px}
+
+.showlabel {display:inline-block; width: 100px; margin-bottom: 10px;}
+
+.sessions {margin-left: 105px; margin-bottom: 30px;}
+.submit	  {margin-left: -20px;}
+
+#new_password, #confirm_password {display:inline-block;}
+
+a img {border: none}
+
+#short_message{ margin-bottom: 40px; margin-top: 20px }
+.short_message_submit {margin-left: 104px}
+#message_text {width: 315px}
+
+/* delicate */
+
+#wrapper {
+    background: url("/images/bg.png") repeat-y;
+    height:100%;
+}
+
+#bundles {
+	float:left;
+	/*background-color:#dee3eb;*/
+	min-width:200px;
+	max-width:250px;
+	position: absolute;
+	width: 200px;
+	left: 0px;
+	padding:0px;
+	margin:0px;
+    height:100%;
+}
+
+#bundles_container {
+    margin-left: 20px;
+    padding-top: 90px;
+}
+
+#tags {
+	margin-left: 220px;
+	background-color:#fff;
+	overflow: visible;
+    min-height: 600px;
+    height: 100%;
+}
+
+#search_tag_div {
+    margin-left: 20px;
+}
+
+.tag_letter {
+    float:left;
+    margin: 20px;
+    width: 12%;
+}
+
+
+.tag_letter h3 {
+    /* width: 100%; */
+}
+
+.tag_letter div {
+    /* float: left */
+}
+
+.tag {
+    background-color: transparent;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.tag_edit_form {
+    display: inline-block;
+}
+
+.tag_edit_input {
+    width: 75%;
+}
+
+.hiddentag {
+    color: lightgray;
+}
+
+#numbers {
+    padding-left: 20px;
+}
+
+.tag_delete {
+    cursor: pointer;
+    color: red;
+    display:none;
+    width: 15px;
+    margin-left: -10px;
+    padding-right: 3px;
+
+   -moz-user-select: none;
+   -khtml-user-select: none;
+   user-select: none;
+}
+
+.hover {
+    width: 100%;
+    white-space: nowrap;
+}
+
+input#tag {
+    margin-top: 20px;
+}
+
+input#bundle {
+    margin-top: 20px;
+    margin-left: 20px;
+    width: 60%;
+}
+
+.tag_drop_area {
+    height: 100%;
+    width: 199px; /* should be 220, background image error */
+    padding-left: 20px;
+    padding-top: 20px;
+}
+
+#footer {
+    height: 300px;
+    background: url("/images/bg.png") repeat-y;
+}
+
+.divider {
+
+}
+
+#bundle_creation_field {
+    z-index: 2;
+}
+
+.drop_bundle {
+    background-color: #B9C4D5;
+}
+
+.drop_hover {
+    background-color: gray;
+    color: white;
+}
+
+.drop_area {
+    background-color: #B9C4D5;
+}
+
+.bundle_delete {
+    cursor: pointer;
+    color: red;
+    display:none;
+    width: 15px;
+    margin-left: -10px;
+    padding-right: 3px;
+
+   -moz-user-select: none;
+   -khtml-user-select: none;
+   user-select: none;
+}
+
+#h4_all, #h4 a {
+    font-size: 14px;
+    font-weight: bold;
+    margin: 5px;
+}
