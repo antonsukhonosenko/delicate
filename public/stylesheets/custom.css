@@ -114,8 +114,8 @@ td {padding: 5px 10px 5px 10px; margin: 0px}
 td.tdlink {background-color: #fff; width: 60px}
 .table_menu {font-size: 20px; margin-top: 5px}
 
-.notice { color: #green; margin-top: 10px; margin-bottom: 10px}
-.error { color: #red; margin-top: 10px; margin-bottom: 10px}
+.notice { color: green; margin-top: 10px; margin-bottom: 10px}
+.error { color: red; margin-top: 10px; margin-bottom: 10px}
 
 .showlabel {display:inline-block; width: 100px; margin-bottom: 10px;}
 
