@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="71baca6c-670d-4166-9394-da0e4c0db2b2" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/custom.css" afterPath="$PROJECT_DIR$/public/stylesheets/custom.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/edit/bundles.html.erb" afterPath="$PROJECT_DIR$/app/views/edit/bundles.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/edit/login.html.erb" afterPath="$PROJECT_DIR$/app/views/edit/login.html.erb" />
     </list>
     <ignored path="delicate server.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -39,7 +40,7 @@
       <file leaf-file-name="login.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/edit/login.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="68" selection-start="103" selection-end="240" vertical-scroll-proportion="-2.5">
+            <state line="15" column="117" selection-start="578" selection-end="578" vertical-scroll-proportion="-9.375">
               <folding />
             </state>
           </provider>
@@ -72,10 +73,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bundles.html.erb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="bundles.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/edit/bundles.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="165" column="118" selection-start="5536" selection-end="5536" vertical-scroll-proportion="-3.2">
+            <state line="507" column="119" selection-start="18116" selection-end="18116" vertical-scroll-proportion="0.61290324">
               <folding />
             </state>
           </provider>
@@ -90,10 +91,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="custom.css" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="custom.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/stylesheets/custom.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="118" column="118" selection-start="2642" selection-end="2642" vertical-scroll-proportion="0.42215568">
+            <state line="129" column="116" selection-start="2978" selection-end="2978" vertical-scroll-proportion="-8.307693">
               <folding />
             </state>
           </provider>
@@ -149,11 +150,11 @@
         <option value="$PROJECT_DIR$/app/views/edit/_tags.html.erb" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/controllers/edit_controller.rb" />
-        <option value="$PROJECT_DIR$/app/views/edit/login.html.erb" />
         <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/edit/bundles.html.erb" />
         <option value="$PROJECT_DIR$/app/views/edit/help.erb" />
         <option value="$PROJECT_DIR$/public/stylesheets/custom.css" />
+        <option value="$PROJECT_DIR$/app/views/edit/login.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/edit/bundles.html.erb" />
       </list>
     </option>
   </component>
@@ -703,16 +704,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/edit/bundles.html.erb">
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/custom.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="165" column="118" selection-start="5536" selection-end="5536" vertical-scroll-proportion="-3.2">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/edit/login.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="68" selection-start="103" selection-end="240" vertical-scroll-proportion="-2.5">
+        <state line="129" column="116" selection-start="2978" selection-end="2978" vertical-scroll-proportion="-8.307693">
           <folding />
         </state>
       </provider>
@@ -731,9 +725,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/custom.css">
+    <entry file="file://$PROJECT_DIR$/app/views/edit/login.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="118" column="118" selection-start="2642" selection-end="2642" vertical-scroll-proportion="0.42215568">
+        <state line="15" column="117" selection-start="578" selection-end="578" vertical-scroll-proportion="-9.375">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/edit/bundles.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="507" column="119" selection-start="18116" selection-end="18116" vertical-scroll-proportion="0.61290324">
           <folding />
         </state>
       </provider>
