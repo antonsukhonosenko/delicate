@@ -32,6 +32,10 @@ class EditController < ApplicationController
     redirect_to :action => "login"
   end
 
+  def help
+
+  end
+
   def bundles # and tags, for editing
 
     @tags_cache = @delicious.tags_get
@@ -185,7 +189,7 @@ private
     if(!@delicious.valid_account?)
       cookies.delete :auth_token
       reset_session
-      flash[:notice] = "Please login first"
+      # flash[:notice] = "Please login first"
       redirect_to :action => "login"
       return
     end

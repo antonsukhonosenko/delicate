@@ -1,4 +1,10 @@
-<div style="font-size: 50px">Delicious Tag Editor</div>
+<h1>Delicious Tag Editor</h1>
+<small>
+  v.0.1.1. Accepts 'old' logins only. <br/>
+  You can contact me via <a href="mailto:zoreslav@gmail.com">zoreslav@gmail.com</a> <br/>
+  or via twitter @<a href="http://twitter.com/zoreslav">zoreslav</a>.<br/>
+  <strong>Questions are highly welcome.</strong>
+</small>
 
 <% if flash[:error] %>
     <div class="error"><%= flash[:error] %></div>
@@ -7,10 +13,8 @@
     <div class="notice"><%= flash[:notice] %></div>
 <% end %>
 
-<h2 class="sessions">Login</h2>
-
 <% form_tag do -%>
-<div><label for="login">Login</label>
+<div style="margin-top: 40px"><label for="login">Login</label>
 <%= text_field_tag 'login' %></div>
 
 <div><label for="password">Password</label>
@@ -20,5 +24,3 @@
 <div class="login_submit"><%= submit_tag 'Login' %></div>
 <% end -%>
 
-<b>NOTE:</b> Old (non-Yahoo) authentication. If you know a working way of Yahoo Auth in ruby, please contact me <a href="mailto:zoreslav@gmail.com">zoreslav@gmail.com</a> or <a href="http://twitter.com/zoreslav">@zoreslav</a>.<br />
-Thank you.

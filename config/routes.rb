@@ -60,6 +60,8 @@ DelicateServer::Application.routes.draw do
   match 'login',        :to => 'edit#login', :as => "login"
   match 'logout',       :to => 'edit#logout', :as => "logout"
 
+  match 'help',       :to => 'edit#help', :as => "help"
+
   match 'bundles',      :to => 'edit#bundles', :as => "bundles"
 
   match 'create_bundle', :to => 'edit#create_bundle', :as => "create_bundle"

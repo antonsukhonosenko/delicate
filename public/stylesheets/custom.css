@@ -5,7 +5,7 @@ body {
    font-size: small;
    font-color: #000;
    background-color: #fff;
-   margin:0px; padding: 0px;
+   margin:0px 0px 0px 20px; padding: 0px;
 }
 
 #main_container{
@@ -15,13 +15,14 @@ body {
 }
 
 h1 {font-size: 22px; font-weight: normal; color: gray }
+h2 {font-size: 16px; font-weight: normal; color: black }
 
 
 a:link, a:active, a:visited {
-   color: #BF6C0B;
+   color: #6f8aa1;
 }
 
-h1 a {font-size: 22px; font-weight: normal; color: #BF6C0B; }
+h1 a {font-size: 22px; font-weight: normal; color: #6f8aa1; }
 
 input {
    margin-bottom: 5px;
@@ -74,14 +75,15 @@ ul#subjects li {
 form div label { display: inline-block; width: 100px; vertical-align: top; }
 form div input[type="submit"] {
 	margin-left: 105px;
-	margin-top: 20px;
-	background-repeat: repeat-x;
+	margin-top: 10px;
 	border: 0px solid transparent;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 	border-radius: 5px;
 	color: white;
 	font-size: 14px;
+    background-color: #6f8aa1;
+    padding: 5px 20px 5px 20px;
 }
 form div input, form div select, form div textarea {
 	margin-bottom: 20px;
@@ -112,12 +114,12 @@ td {padding: 5px 10px 5px 10px; margin: 0px}
 td.tdlink {background-color: #fff; width: 60px}
 .table_menu {font-size: 20px; margin-top: 5px}
 
-.notice { background-color: #B5FF3F; color: black; padding: 10px; margin-top: 10px; margin-bottom: 10px}
-.error { background-color: #FF8F8F; color: black; padding: 10px; margin-top: 10px; margin-bottom: 10px}
+.notice { color: #green; margin-top: 10px; margin-bottom: 10px}
+.error { color: #red; margin-top: 10px; margin-bottom: 10px}
 
 .showlabel {display:inline-block; width: 100px; margin-bottom: 10px;}
 
-.sessions {margin-left: 105px; margin-bottom: 30px;}
+.sessions {margin-left: 105px; margin-bottom: 10px;}
 .submit	  {margin-left: -20px;}
 
 #new_password, #confirm_password {display:inline-block;}
@@ -133,6 +135,7 @@ a img {border: none}
 #wrapper {
     background: url("/images/bg.png") repeat-y;
     height:100%;
+    margin-left: -20px;
 }
 
 #bundles {
@@ -150,7 +153,7 @@ a img {border: none}
 
 #bundles_container {
     margin-left: 20px;
-    padding-top: 90px;
+    padding-top: 20px;
 }
 
 #tags {
@@ -183,7 +186,7 @@ a img {border: none}
 .tag {
     background-color: transparent;
     overflow: hidden;
-    display: inline-block;
+    display: inline;
 }
 
 .tag_edit_form {
@@ -225,7 +228,6 @@ input#tag {
 }
 
 input#bundle {
-    margin-top: 20px;
     margin-left: 20px;
     width: 60%;
 }
@@ -234,7 +236,7 @@ input#bundle {
     height: 100%;
     width: 199px; /* should be 220, background image error */
     padding-left: 20px;
-    padding-top: 20px;
+    padding-top: 5px;
 }
 
 #footer {
@@ -279,5 +281,23 @@ input#bundle {
 #h4_all, #h4 a {
     font-size: 14px;
     font-weight: bold;
-    margin: 5px;
+
+}
+
+#h4 {
+    margin: 2px 5px 2px 0px;
+}
+
+#h4_all {
+    border: 1px solid white;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    padding: 3px;
+    background-color: white;
+    margin-bottom: 20px;
+}
+
+.showntag {
+    margin-bottom: 2px;
 }
