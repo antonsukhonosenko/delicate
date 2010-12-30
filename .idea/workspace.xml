@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="71baca6c-670d-4166-9394-da0e4c0db2b2" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/edit/create_bundle.html.erb" afterPath="$PROJECT_DIR$/app/views/edit/create_bundle.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/edit/bundles.html.erb" afterPath="$PROJECT_DIR$/app/views/edit/bundles.html.erb" />
     </list>
     <ignored path="delicate server.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,10 +36,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="create_bundle.html.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="create_bundle.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/edit/create_bundle.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="42" column="0" selection-start="1438" selection-end="1438" vertical-scroll-proportion="0.8767908">
+            <state line="17" column="116" selection-start="654" selection-end="654" vertical-scroll-proportion="-10.625">
               <folding />
             </state>
           </provider>
@@ -81,10 +81,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bundles.html.erb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="bundles.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/edit/bundles.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="499" column="0" selection-start="17803" selection-end="18104" vertical-scroll-proportion="-2.1">
+            <state line="411" column="99" selection-start="15234" selection-end="15234" vertical-scroll-proportion="0.5258064">
               <folding />
             </state>
           </provider>
@@ -160,9 +160,9 @@
         <option value="$PROJECT_DIR$/app/views/edit/help.erb" />
         <option value="$PROJECT_DIR$/public/stylesheets/custom.css" />
         <option value="$PROJECT_DIR$/app/views/edit/login.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/edit/bundles.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/edit_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/edit/create_bundle.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/edit/bundles.html.erb" />
       </list>
     </option>
   </component>
@@ -719,23 +719,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/edit/_tags.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="113" selection-start="733" selection-end="733" vertical-scroll-proportion="-5.1">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/edit/bundles.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="499" column="0" selection-start="17803" selection-end="18104" vertical-scroll-proportion="-2.1">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/edit_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="35" column="0" selection-start="798" selection-end="798" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/edit/create_bundle.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="116" selection-start="654" selection-end="654" vertical-scroll-proportion="-10.625">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/edit/_tags.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="113" selection-start="733" selection-end="733" vertical-scroll-proportion="-5.1">
           <folding />
         </state>
       </provider>
@@ -747,9 +747,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/edit/create_bundle.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/views/edit/bundles.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="0" selection-start="1438" selection-end="1438" vertical-scroll-proportion="0.8767908">
+        <state line="411" column="99" selection-start="15234" selection-end="15234" vertical-scroll-proportion="0.5258064">
           <folding />
         </state>
       </provider>

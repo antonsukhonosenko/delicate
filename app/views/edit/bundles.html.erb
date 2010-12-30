@@ -44,7 +44,7 @@
                 success: function(data){
                     // alert(data);  // replace bundles list with recieved html data
                     $("#bundles_container").html(data);
-                    $(".tag_drop_area").html("Drop tags here to create bundle:<br/><br/>");
+                    $(".tag_drop_area").html('<div style="margin-bottom: 10px; font-size: 0.7em">Drop desired tags below</div>');
 
                     $('#bundles #h4').droppable({
                         drop: function(event, ui) {
@@ -57,7 +57,7 @@
                                 data: 'bundle='+$(event.target).children('a').html()+'&tag='+$(ui.draggable).children('.tag').html(),
                                 success: function(data){
                                     $("#bundles_container").html(data);
-                                    $(".tag_drop_area").html("Drop tags here to create bundle:<br/><br/>");
+                                    $(".tag_drop_area").html('<div style="margin-bottom: 10px; font-size: 0.7em">Drop desired tags below</div>');
 
                                     $(event.target).children('a').css('background-color', 'transparent');
                                     $(ui.draggable).children('.tag').css('background-color', 'transparent');
@@ -405,7 +405,7 @@
                     data: 'bundle='+etc.html()+'&tag='+uidc.html(),
                     success: function(data){
                         $("#bundles_container").html(data);
-                        $(".tag_drop_area").html("<div style='margin-bottom: 10px; font-size: 0.7em'>Drop tags on the panel to create bundle</div");
+                        $(".tag_drop_area").html('<div style="margin-bottom: 10px; font-size: 0.7em">Drop desired tags below</div>');
 
                         etc.css('background-color', 'transparent');
                         uidc.css('background-color', 'transparent');
