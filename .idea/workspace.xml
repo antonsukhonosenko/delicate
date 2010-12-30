@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="71baca6c-670d-4166-9394-da0e4c0db2b2" name="Default" comment="" />
+    <list default="true" id="71baca6c-670d-4166-9394-da0e4c0db2b2" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/edit/help.erb" afterPath="$PROJECT_DIR$/app/views/edit/help.erb" />
+    </list>
     <ignored path="delicate server.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -36,16 +39,16 @@
       <file leaf-file-name="login.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/edit/login.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="115" selection-start="682" selection-end="682" vertical-scroll-proportion="-13.125">
+            <state line="4" column="68" selection-start="103" selection-end="240" vertical-scroll-proportion="-2.5">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="help.erb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="help.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/edit/help.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="114" selection-start="13" selection-end="13" vertical-scroll-proportion="0.0">
+            <state line="2" column="20" selection-start="35" selection-end="35" vertical-scroll-proportion="0.08042896">
               <folding />
             </state>
           </provider>
@@ -69,10 +72,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bundles.html.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="bundles.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/edit/bundles.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="163" column="40" selection-start="5518" selection-end="5518" vertical-scroll-proportion="0.41935483">
+            <state line="165" column="118" selection-start="5536" selection-end="5536" vertical-scroll-proportion="-3.2">
               <folding />
             </state>
           </provider>
@@ -146,11 +149,11 @@
         <option value="$PROJECT_DIR$/app/views/edit/_tags.html.erb" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/controllers/edit_controller.rb" />
-        <option value="$PROJECT_DIR$/app/views/edit/help.erb" />
         <option value="$PROJECT_DIR$/public/stylesheets/custom.css" />
         <option value="$PROJECT_DIR$/app/views/edit/login.html.erb" />
         <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
         <option value="$PROJECT_DIR$/app/views/edit/bundles.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/edit/help.erb" />
       </list>
     </option>
   </component>
@@ -686,30 +689,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/edit/login.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="115" selection-start="682" selection-end="682" vertical-scroll-proportion="-13.125">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/edit/help.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="114" selection-start="13" selection-end="13" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="14" column="120" selection-start="438" selection-end="438" vertical-scroll-proportion="-8.75">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/edit/_tags.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="113" selection-start="733" selection-end="733" vertical-scroll-proportion="-5.1">
           <folding />
         </state>
       </provider>
@@ -730,7 +712,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/edit/bundles.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="163" column="40" selection-start="5518" selection-end="5518" vertical-scroll-proportion="0.41935483">
+        <state line="165" column="118" selection-start="5536" selection-end="5536" vertical-scroll-proportion="-3.2">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/edit/login.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="68" selection-start="103" selection-end="240" vertical-scroll-proportion="-2.5">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/edit/_tags.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="113" selection-start="733" selection-end="733" vertical-scroll-proportion="-5.1">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/edit/help.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="20" selection-start="35" selection-end="35" vertical-scroll-proportion="0.08042896">
           <folding />
         </state>
       </provider>
