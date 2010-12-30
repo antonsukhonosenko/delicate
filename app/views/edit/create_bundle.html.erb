@@ -34,7 +34,9 @@
     });
 </script>
 
-<div id="h4_all"><span class="bundle_delete">x</span><a href="bundles">All</a></div>
+<div id="h4_all"><span class="bundle_delete">x</span><a href="bundles">Show all tags</a></div>
+
+<h2>Your bundles</h2>
 
 <% @bundles.each do |b| %>
     <div id="h4"><span class="bundle_delete">x</span><a href="bundles?bundle=<%= b.name %>"><%= b.name %></a></div>
