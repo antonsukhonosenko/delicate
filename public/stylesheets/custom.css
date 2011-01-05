@@ -86,7 +86,7 @@ form div input[type="submit"] {
     padding: 5px 20px 5px 20px;
 }
 form div input, form div select, form div textarea {
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 }
 
 form div input[type="text"], form div input[type="password"], textarea {
