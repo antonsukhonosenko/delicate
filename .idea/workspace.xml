@@ -67,16 +67,7 @@
       <file leaf-file-name="application.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="120" selection-start="438" selection-end="438" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="routes.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/routes.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="62" column="54" selection-start="1972" selection-end="1972" vertical-scroll-proportion="0.0">
+            <state line="14" column="120" selection-start="438" selection-end="438" vertical-scroll-proportion="-2.125">
               <folding />
             </state>
           </provider>
@@ -91,19 +82,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_tags.html.erb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="_tags.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/edit/_tags.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="29" selection-start="832" selection-end="832" vertical-scroll-proportion="-4.0">
+            <state line="25" column="40" selection-start="843" selection-end="843" vertical-scroll-proportion="0.2857143">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="custom.css" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="custom.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/stylesheets/custom.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="299" column="12" selection-start="5256" selection-end="5256" vertical-scroll-proportion="0.6666667">
+            <state line="299" column="33" selection-start="5277" selection-end="5277" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -162,8 +153,8 @@
         <option value="$PROJECT_DIR$/app/views/edit/bundles.html.erb" />
         <option value="$PROJECT_DIR$/app/views/edit/help.erb" />
         <option value="$PROJECT_DIR$/app/views/edit/login.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/edit/_tags.html.erb" />
         <option value="$PROJECT_DIR$/public/stylesheets/custom.css" />
+        <option value="$PROJECT_DIR$/app/views/edit/_tags.html.erb" />
       </list>
     </option>
   </component>
@@ -618,18 +609,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="120" selection-start="438" selection-end="438" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/routes.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="54" selection-start="1972" selection-end="1972" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/edit/login.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="15" column="58" selection-start="600" selection-end="600" vertical-scroll-proportion="-9.375">
@@ -644,6 +623,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/config/routes.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="62" column="54" selection-start="1972" selection-end="1972" vertical-scroll-proportion="0.04021448">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="120" selection-start="438" selection-end="438" vertical-scroll-proportion="-2.125">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/edit/bundles.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="523" column="36" selection-start="18768" selection-end="18768" vertical-scroll-proportion="-268.75">
@@ -651,16 +644,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/edit/_tags.html.erb">
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/custom.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="29" selection-start="832" selection-end="832" vertical-scroll-proportion="-4.0">
+        <state line="299" column="33" selection-start="5277" selection-end="5277" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/custom.css">
+    <entry file="file://$PROJECT_DIR$/app/views/edit/_tags.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="299" column="12" selection-start="5256" selection-end="5256" vertical-scroll-proportion="0.6666667">
+        <state line="25" column="40" selection-start="843" selection-end="843" vertical-scroll-proportion="0.2857143">
           <folding />
         </state>
       </provider>
