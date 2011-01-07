@@ -12,19 +12,19 @@
 
       <% tail+=1 %>
 
-      <% if tail % 6 == 0 %>
+      <% if tail % 10 == 0 %>
 
       </div>
           <div class="tag_letter">
-            <h3>&nbsp</h3>
+            <h3 style="color: lightgray"><%= @tags[i+1].name[0].chr.upcase %></h3>
 
       <% end %>
 
       <% if @tags[i+1] && t.name[0].chr.downcase != @tags[i+1].name[0].chr.downcase %>
 
-          <% (6 - tail % 6).times do %>
+          <% (10 - tail % 10).times do %>
             <div class="showntag">&nbsp</div>
-          <% end unless !((tail % 6) > 0) %>
+          <% end unless !((tail % 10) > 0) %>
 
           </div>
           <div class="tag_letter">

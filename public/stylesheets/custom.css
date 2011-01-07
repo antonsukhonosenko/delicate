@@ -299,4 +299,5 @@ input#bundle {
 
 .showntag {
     margin-bottom: 2px;
+    min-width: 100px;
 }
