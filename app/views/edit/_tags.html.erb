@@ -23,7 +23,7 @@
       <% if @tags[i+1] && t.name[0].chr.downcase != @tags[i+1].name[0].chr.downcase %>
 
           <% (10 - tail % 10).times do %>
-            <div class="showntag">&nbsp</div>
+            <div class="blanktag">&nbsp</div>
           <% end unless !((tail % 10) > 0) %>
 
           </div>
